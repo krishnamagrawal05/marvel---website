@@ -1,0 +1,1811 @@
+/* =====================================================
+   MARVEL HERO EXPLORER
+   COMPLETE STYLE SHEET
+===================================================== */
+
+
+/* =====================================================
+   1. GENERAL RESET
+===================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0b0b0b;
+    color: white;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+/* =====================================================
+   2. NAVIGATION BAR
+===================================================== */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 50px;
+
+    background-color: #111;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
+}
+
+nav h2 {
+    color: #e62429;
+    margin: 0;
+    font-size: 28px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #e62429;
+}
+
+
+/* Mobile menu button */
+
+.menu-toggle {
+    display: none;
+
+    background: transparent;
+    border: none;
+
+    color: white;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    padding: 5px 10px;
+}
+
+
+/* Theme button */
+
+#theme-toggle {
+    padding: 10px 15px;
+
+    background-color: #e62429;
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    transition: 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background-color: #ff4045;
+}
+
+
+/* =====================================================
+   3. HOME SECTION
+===================================================== */
+
+.hero {
+    min-height: 85vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px 20px;
+}
+
+.hero h1 {
+    font-size: 50px;
+
+    color: #e62429;
+
+    margin-bottom: 20px;
+
+    text-shadow: 0 0 20px rgba(230, 36, 41, 0.4);
+}
+
+.hero p {
+    font-size: 20px;
+
+    margin-bottom: 30px;
+
+    color: #ddd;
+}
+
+
+/* =====================================================
+   4. ALL BUTTONS
+===================================================== */
+
+button {
+    padding: 13px 25px;
+
+    background-color: #e62429;
+    color: white;
+
+    border: none;
+    border-radius: 7px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff4045;
+
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =====================================================
+   5. HEROES SECTION
+===================================================== */
+
+#heroes {
+    padding: 80px 30px;
+
+    text-align: center;
+}
+
+#heroes h2 {
+    font-size: 35px;
+
+    color: #e62429;
+
+    margin-bottom: 35px;
+}
+
+
+/* Search */
+
+#hero-search {
+    width: 350px;
+    max-width: 90%;
+
+    padding: 15px 20px;
+
+    margin-bottom: 40px;
+
+    background-color: #181818;
+
+    color: white;
+
+    border: 2px solid #444;
+
+    border-radius: 25px;
+
+    font-size: 16px;
+
+    outline: none;
+
+    transition: 0.3s ease;
+}
+
+#hero-search:focus {
+    border-color: #e62429;
+
+    box-shadow: 0 0 15px rgba(230, 36, 41, 0.5);
+}
+
+#hero-search::placeholder {
+    color: #aaa;
+}
+
+
+/* Hero cards container */
+
+.hero-container {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: stretch;
+
+    gap: 25px;
+
+    flex-wrap: wrap;
+}
+
+
+/* Hero card */
+
+.hero-card {
+    width: 220px;
+
+    padding: 25px 20px;
+
+    background-color: #181818;
+
+    border-radius: 15px;
+
+    border: 2px solid #444;
+
+    transition: 0.3s ease;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+
+    cursor: pointer;
+}
+
+.hero-card img {
+    width: 150px;
+
+    height: 250px;
+
+    object-fit: contain;
+
+    display: block;
+
+    margin: 0 auto 15px;
+}
+
+.hero-card h3 {
+    color: #e62429;
+
+    font-size: 22px;
+
+    margin-bottom: 10px;
+}
+
+.hero-card p {
+    font-size: 15px;
+
+    color: #ccc;
+}
+
+.hero-card:hover {
+    transform: translateY(-10px);
+
+    border-color: #e62429;
+
+    box-shadow:
+        0 0 20px rgba(230, 36, 41, 0.5);
+}
+
+
+/* =====================================================
+   6. HERO INFORMATION
+===================================================== */
+
+#hero-info {
+    width: 70%;
+
+    max-width: 700px;
+
+    margin: 60px auto;
+
+    padding: 35px;
+
+    background-color: #181818;
+
+    border: 2px solid #e62429;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 0 25px rgba(230, 36, 41, 0.5);
+
+    text-align: center;
+}
+
+#hero-info h2 {
+    color: #e62429;
+
+    font-size: 35px;
+
+    margin-bottom: 20px;
+}
+
+#hero-info p {
+    color: white;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+#hero-detail-image {
+    width: 180px;
+
+    height: 280px;
+
+    object-fit: contain;
+
+    display: block;
+
+    margin: 0 auto 20px;
+}
+
+
+/* =====================================================
+   7. HERO COMPARISON
+===================================================== */
+
+#comparison {
+    padding: 80px 30px;
+
+    text-align: center;
+}
+
+#comparison h2 {
+    color: #e62429;
+
+    font-size: 35px;
+
+    margin-bottom: 30px;
+}
+
+
+/* Select boxes */
+
+.compare-selectors {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 40px;
+}
+
+.compare-selectors select {
+    padding: 13px 18px;
+
+    min-width: 200px;
+
+    background-color: #181818;
+
+    color: white;
+
+    border: 2px solid #444;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    outline: none;
+
+    cursor: pointer;
+}
+
+.compare-selectors select:focus {
+    border-color: #e62429;
+}
+
+
+/* Comparison heading */
+
+#comparison-result h3 {
+    color: #e62429;
+
+    font-size: 28px;
+
+    margin-bottom: 30px;
+}
+
+
+/* Two cards */
+
+.comparison-container {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: stretch;
+
+    gap: 30px;
+
+    flex-wrap: wrap;
+}
+
+
+/* Individual comparison card */
+
+.comparison-card {
+    width: 300px;
+
+    padding: 25px;
+
+    background-color: #181818;
+
+    border: 2px solid #444;
+
+    border-radius: 18px;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+
+    transition: 0.3s ease;
+}
+
+.comparison-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #e62429;
+
+    box-shadow:
+        0 0 20px rgba(230, 36, 41, 0.4);
+}
+
+.comparison-card img {
+    width: 150px;
+
+    height: 230px;
+
+    object-fit: contain;
+
+    display: block;
+
+    margin: 0 auto 15px;
+}
+
+.comparison-card h4 {
+    color: #e62429;
+
+    font-size: 23px;
+
+    margin-bottom: 20px;
+}
+
+.comparison-card p {
+    color: #ddd;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    margin-bottom: 15px;
+}
+
+.comparison-card strong {
+    color: white;
+}
+
+
+/* =====================================================
+   8. QUIZ
+===================================================== */
+
+#quiz {
+    padding: 80px 30px;
+
+    text-align: center;
+}
+
+#quiz h2 {
+    color: #e62429;
+
+    font-size: 35px;
+
+    margin-bottom: 25px;
+}
+
+#question {
+    font-size: 21px;
+
+    margin-bottom: 25px;
+
+    color: white;
+}
+
+
+/* Quiz option buttons */
+
+#quiz-options {
+    display: block;
+
+    max-width: 600px;
+
+    margin: 0 auto;
+}
+
+#quiz-options button {
+    margin: 8px;
+
+    min-width: 170px;
+}
+
+
+/* Quiz result */
+
+#quiz-result {
+    margin-top: 25px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    color: #e62429;
+}
+
+
+/* Next and restart */
+
+#next-button,
+#restart-button {
+    margin-top: 20px;
+}
+
+
+/* =====================================================
+   9. MOVIES SECTION
+===================================================== */
+
+#movies {
+    padding: 80px 30px;
+
+    text-align: center;
+}
+
+#movies h2 {
+    color: #e62429;
+
+    font-size: 35px;
+
+    margin-bottom: 35px;
+}
+
+.movie-container {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    flex-wrap: wrap;
+}
+
+.movie-card {
+    width: 250px;
+
+    padding: 20px;
+
+    background-color: #181818;
+
+    border: 2px solid #444;
+
+    border-radius: 15px;
+
+    transition: 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #e62429;
+
+    box-shadow:
+        0 0 20px rgba(230, 36, 41, 0.4);
+}
+
+.movie-card img {
+    width: 100%;
+
+    max-height: 300px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+    margin-bottom: 15px;
+}
+
+.movie-card h3 {
+    color: #e62429;
+
+    margin-bottom: 10px;
+}
+
+.movie-card p {
+    color: #ccc;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   10. LOADING SCREEN
+===================================================== */
+
+#loader {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: #0b0b0b;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 9999;
+}
+
+.loader-content {
+    text-align: center;
+}
+
+.loader-content h2 {
+    color: #e62429;
+
+    margin-bottom: 20px;
+}
+
+.loader-spinner {
+    width: 50px;
+    height: 50px;
+
+    border: 5px solid #333;
+
+    border-top: 5px solid #e62429;
+
+    border-radius: 50%;
+
+    animation: spin 1s linear infinite;
+
+    margin: auto;
+}
+
+@keyframes spin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =====================================================
+   11. LIGHT MODE
+===================================================== */
+
+body.light-mode {
+    background-color: #f5f5f5;
+
+    color: #111;
+}
+
+
+/* Navigation */
+
+body.light-mode nav {
+    background-color: white;
+
+    box-shadow:
+        0 3px 15px rgba(0, 0, 0, 0.15);
+}
+
+body.light-mode nav h2 {
+    color: #e62429;
+}
+
+body.light-mode .nav-links a {
+    color: #222;
+}
+
+body.light-mode .nav-links a:hover {
+    color: #e62429;
+}
+
+
+/* Home */
+
+body.light-mode .hero p {
+    color: #333;
+}
+
+
+/* Hero cards */
+
+body.light-mode .hero-card {
+    background-color: white;
+
+    border-color: #ddd;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+body.light-mode .hero-card p {
+    color: #555;
+}
+
+
+/* Search */
+
+body.light-mode #hero-search {
+    background-color: white;
+
+    color: #111;
+
+    border-color: #ccc;
+}
+
+body.light-mode #hero-search::placeholder {
+    color: #777;
+}
+
+
+/* Hero information */
+
+body.light-mode #hero-info {
+    background-color: white;
+}
+
+body.light-mode #hero-info p {
+    color: #222;
+}
+
+
+/* Comparison */
+
+body.light-mode .compare-selectors select {
+    background-color: white;
+
+    color: #111;
+
+    border-color: #ccc;
+}
+
+body.light-mode .comparison-card {
+    background-color: white;
+
+    border-color: #ddd;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+body.light-mode .comparison-card p {
+    color: #444;
+}
+
+body.light-mode .comparison-card strong {
+    color: #111;
+}
+
+
+/* Quiz */
+
+body.light-mode #question {
+    color: #222;
+}
+
+
+/* Movies */
+
+body.light-mode .movie-card {
+    background-color: white;
+
+    border-color: #ddd;
+}
+
+body.light-mode .movie-card p {
+    color: #555;
+}
+
+
+/* Loader */
+
+body.light-mode #loader {
+    background-color: #f5f5f5;
+}
+
+
+/* =====================================================
+   12. MOBILE RESPONSIVE DESIGN
+===================================================== */
+
+@media (max-width: 768px) {
+
+    /* Navigation */
+
+    nav {
+        padding: 15px 20px;
+
+        position: sticky;
+        top: 0;
+    }
+
+    nav h2 {
+        font-size: 24px;
+    }
+
+    /* Show hamburger */
+
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Hide navigation links */
+
+    .nav-links {
+        display: none;
+
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        background-color: #111;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 0;
+
+        padding: 20px 0;
+
+        box-shadow:
+            0 8px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    /* IMPORTANT:
+       JavaScript adds "active"
+       to .nav-links
+    */
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        margin: 12px 0;
+
+        font-size: 18px;
+    }
+
+    #theme-toggle {
+        margin-top: 10px;
+    }
+
+
+    /* Home */
+
+    .hero {
+        min-height: 75vh;
+
+        padding: 30px 20px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+
+        line-height: 1.2;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+
+    /* Heroes */
+
+    #heroes {
+        padding: 60px 20px;
+    }
+
+    #heroes h2 {
+        font-size: 30px;
+    }
+
+    .hero-container {
+        gap: 20px;
+    }
+
+    .hero-card {
+        width: 90%;
+
+        max-width: 300px;
+    }
+
+
+    /* Hero information */
+
+    #hero-info {
+        width: 90%;
+
+        padding: 25px;
+
+        margin: 40px auto;
+    }
+
+    #hero-info h2 {
+        font-size: 28px;
+    }
+
+    #hero-info p {
+        font-size: 16px;
+    }
+
+
+    /* Comparison */
+
+    #comparison {
+        padding: 60px 20px;
+    }
+
+    #comparison h2 {
+        font-size: 30px;
+    }
+
+    .compare-selectors {
+        flex-direction: column;
+    }
+
+    .compare-selectors select {
+        width: 90%;
+
+        max-width: 300px;
+    }
+
+    .comparison-card {
+        width: 90%;
+
+        max-width: 330px;
+    }
+
+
+    /* Quiz */
+
+    #quiz {
+        padding: 60px 20px;
+    }
+
+    #quiz h2 {
+        font-size: 30px;
+    }
+
+    #question {
+        font-size: 18px;
+    }
+
+    #quiz-options button {
+        width: 90%;
+
+        max-width: 300px;
+
+        margin: 7px auto;
+
+        display: block;
+    }
+
+
+    /* Movies */
+
+    #movies {
+        padding: 60px 20px;
+    }
+
+    #movies h2 {
+        font-size: 30px;
+    }
+
+    .movie-card {
+        width: 90%;
+
+        max-width: 320px;
+    }
+
+}
+
+
+/* =====================================================
+   13. SMALL MOBILE SCREENS
+===================================================== */
+
+@media (max-width: 480px) {
+
+    nav {
+        padding: 14px 15px;
+    }
+
+    nav h2 {
+        font-size: 22px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    #hero-search {
+        width: 90%;
+    }
+
+    .hero-card {
+        width: 95%;
+    }
+
+    #hero-detail-image {
+        width: 150px;
+
+        height: 230px;
+    }
+
+    .comparison-card img {
+        width: 130px;
+
+        height: 210px;
+    }
+
+}
+/* ================================
+   MOVIE INFORMATION
+================================= */
+
+.movie-info {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.movie-rating {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.movie-runtime {
+    font-size: 14px;
+}
+
+
+/* Movie Button */
+
+.movie-card button {
+    margin-top: 15px;
+    padding: 10px 18px;
+
+    background-color: #e50914;
+    color: white;
+
+    border: none;
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+
+.movie-card button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+}
+/* ================================
+   HERO POWER STATS
+================================= */
+
+#hero-stats {
+    width: 90%;
+    max-width: 500px;
+    margin: 25px auto;
+}
+
+#hero-stats h3 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.stat {
+    margin: 15px 0;
+    text-align: left;
+}
+
+.stat span {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.stat-bar {
+    width: 100%;
+    height: 12px;
+    background: #333;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.stat-bar div {
+    width: 0%;
+    height: 100%;
+    background: #e50914;
+    border-radius: 10px;
+
+    transition: width 1s ease;
+}
+/* ================================
+   3D HERO CARD EFFECT
+================================= */
+
+.hero-card {
+    transform-style: preserve-3d;
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.3s ease;
+
+    will-change: transform;
+
+    position: relative;
+}
+
+.hero-card:hover {
+    box-shadow:
+        0 15px 30px rgba(255, 0, 0, 0.3),
+        0 0 25px rgba(255, 0, 0, 0.2);
+}
+
+.hero-card img {
+    transform: translateZ(25px);
+}
+
+.hero-card h3,
+.hero-card p {
+    transform: translateZ(15px);
+}
+/* ================================
+   IMPROVED MOBILE UI
+================================= */
+
+@media (max-width: 768px) {
+
+    /* Prevent horizontal scrolling */
+
+    body {
+        overflow-x: hidden;
+    }
+
+
+    /* Navigation */
+
+    nav {
+        padding: 14px 18px;
+    }
+
+    nav h2 {
+        font-size: 22px;
+    }
+
+
+    /* Home section */
+
+    .hero {
+        min-height: 75vh;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+        line-height: 1.2;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+
+    /* Section headings */
+
+    section {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    section h2 {
+        font-size: 26px;
+        text-align: center;
+    }
+
+
+    /* Search box */
+
+    #hero-search {
+        width: 90%;
+        max-width: 400px;
+        box-sizing: border-box;
+        margin: 15px auto 25px;
+        display: block;
+    }
+
+
+    /* Hero cards */
+
+    .hero-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .hero-card {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+
+    /* Hero images */
+
+    .hero-card img {
+        max-width: 100%;
+        height: auto;
+    }
+
+
+    /* Hero details */
+
+    #hero-info {
+        width: 90%;
+        max-width: 450px;
+        box-sizing: border-box;
+        margin: 25px auto;
+        padding: 20px;
+    }
+
+    #hero-detail-image {
+        max-width: 100%;
+        height: auto;
+    }
+
+
+    /* Comparison */
+
+    .compare-selectors {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .compare-selectors select,
+    .compare-selectors button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+
+    /* Quiz */
+
+    #quiz-options {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    #quiz-options button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+
+    /* Movies */
+
+    .movie-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .movie-card {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+}
+/* ================================
+   3D CUSTOM CURSOR
+================================= */
+
+#custom-cursor {
+    position: fixed;
+
+    width: 20px;
+    height: 20px;
+
+    border: 2px solid #ff1744;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: 99999;
+
+    transform: translate(-50%, -50%);
+
+    box-shadow:
+        0 0 10px #ff1744,
+        0 0 20px rgba(255, 23, 68, 0.6);
+
+    transition:
+        width 0.15s ease,
+        height 0.15s ease,
+        background-color 0.15s ease;
+}
+
+
+/* Cursor becomes larger over clickable elements */
+
+#custom-cursor.hover {
+    width: 35px;
+    height: 35px;
+
+    background-color: rgba(255, 23, 68, 0.15);
+}
+
+
+/* Disable custom cursor on mobile */
+
+@media (max-width: 768px) {
+
+    #custom-cursor {
+        display: none;
+    }
+
+}
+/* ================================
+   3D CURSOR OUTER RING
+================================= */
+
+#cursor-ring {
+    position: fixed;
+
+    width: 55px;
+    height: 55px;
+
+    border: 1px solid rgba(255, 23, 68, 0.45);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: 99998;
+
+    transform: translate(-50%, -50%);
+
+    box-shadow:
+        0 0 15px rgba(255, 23, 68, 0.25),
+        inset 0 0 10px rgba(255, 23, 68, 0.15);
+
+    transition:
+        width 0.25s ease,
+        height 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+/* Larger ring over clickable elements */
+
+#cursor-ring.hover {
+    width: 70px;
+    height: 70px;
+
+    border-color: rgba(255, 23, 68, 0.7);
+}
+
+
+/* Disable on mobile */
+
+@media (max-width: 768px) {
+
+    #cursor-ring {
+        display: none;
+    }
+
+}
+/* ================================
+   MARVEL UNIVERSE MAP
+================================= */
+
+#universe-map {
+    padding: 70px 20px;
+    text-align: center;
+}
+
+#universe-map h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #ff1744;
+    text-shadow:
+        0 0 10px rgba(255, 23, 68, 0.5),
+        0 0 20px rgba(255, 23, 68, 0.3);
+}
+
+.map-subtitle {
+    margin-bottom: 35px;
+    opacity: 0.8;
+}
+
+.map-container {
+    position: relative;
+
+    width: 90%;
+    max-width: 900px;
+
+    min-height: 350px;
+
+    margin: auto;
+
+    border: 2px solid rgba(255, 23, 68, 0.5);
+
+    border-radius: 20px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255, 23, 68, 0.12),
+            transparent 60%
+        );
+
+    box-shadow:
+        0 0 30px rgba(255, 23, 68, 0.15),
+        inset 0 0 30px rgba(255, 23, 68, 0.08);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+
+    padding: 40px;
+
+    box-sizing: border-box;
+}
+
+.map-location {
+    min-width: 130px;
+
+    padding: 15px 20px;
+
+    border: 1px solid rgba(255, 23, 68, 0.6);
+
+    border-radius: 12px;
+
+    background: rgba(20, 20, 20, 0.8);
+
+    color: white;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.map-location span {
+    margin-left: 6px;
+}
+
+.map-location:hover {
+    transform:
+        translateY(-6px)
+        scale(1.05);
+
+    background: #e50914;
+
+    box-shadow:
+        0 0 15px rgba(255, 23, 68, 0.7),
+        0 0 30px rgba(255, 23, 68, 0.3);
+}
+
+#location-info {
+    width: 90%;
+
+    max-width: 650px;
+
+    margin: 30px auto 0;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    border: 1px solid rgba(255, 23, 68, 0.4);
+
+    background: rgba(20, 20, 20, 0.7);
+
+    box-shadow:
+        0 0 20px rgba(255, 23, 68, 0.15);
+
+    box-sizing: border-box;
+}
+
+#location-name {
+    color: #ff1744;
+
+    margin-bottom: 10px;
+
+    font-size: 24px;
+}
+
+#location-description {
+    line-height: 1.6;
+
+    opacity: 0.9;
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    #universe-map {
+        padding: 50px 15px;
+    }
+
+    #universe-map h2 {
+        font-size: 26px;
+    }
+
+    .map-container {
+        width: 100%;
+
+        min-height: 300px;
+
+        padding: 25px 15px;
+
+        gap: 12px;
+    }
+
+    .map-location {
+        width: 100%;
+
+        max-width: 250px;
+    }
+
+    #location-info {
+        width: 100%;
+    }
+
+}
+/* ================================
+   MARVEL MAP ENERGY EFFECT
+================================= */
+
+.map-container::before {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+    left: 8%;
+    right: 8%;
+
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 23, 68, 0.8),
+        rgba(255, 23, 68, 0.3),
+        rgba(255, 23, 68, 0.8),
+        transparent
+    );
+
+    box-shadow:
+        0 0 8px rgba(255, 23, 68, 0.6),
+        0 0 20px rgba(255, 23, 68, 0.3);
+
+    pointer-events: none;
+}
+
+
+/* Keep location buttons above the energy line */
+
+.map-location {
+    position: relative;
+    z-index: 2;
+}
+/* ================================
+   MAP ENERGY PULSE
+================================= */
+
+.map-container::after {
+    content: "";
+
+    position: absolute;
+
+    top: calc(50% - 4px);
+    left: 8%;
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #ff1744;
+
+    box-shadow:
+        0 0 8px #ff1744,
+        0 0 18px #ff1744,
+        0 0 30px rgba(255, 23, 68, 0.7);
+
+    animation: mapPulse 3s linear infinite;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+@keyframes mapPulse {
+
+    0% {
+        left: 8%;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        left: 92%;
+        opacity: 0;
+    }
+
+}
+/* ================================
+   BACK TO TOP BUTTON
+================================= */
+
+#back-to-top {
+    position: fixed;
+
+    bottom: 25px;
+    right: 25px;
+
+    width: 50px;
+    height: 50px;
+
+    border: 2px solid #ff1744;
+    border-radius: 50%;
+
+    background: #111;
+    color: #ff1744;
+
+    font-size: 26px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    display: none;
+
+    z-index: 9999;
+
+    box-shadow:
+        0 0 10px rgba(255, 23, 68, 0.6),
+        0 0 25px rgba(255, 23, 68, 0.3);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+
+/* Hover effect */
+
+#back-to-top:hover {
+
+    transform: translateY(-5px) scale(1.08);
+
+    background: #e50914;
+
+    color: white;
+
+    box-shadow:
+        0 0 15px rgba(255, 23, 68, 0.8),
+        0 0 30px rgba(255, 23, 68, 0.5);
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    #back-to-top {
+        width: 45px;
+        height: 45px;
+
+        bottom: 20px;
+        right: 18px;
+
+        font-size: 22px;
+    }
+}
+/* ================================
+   SCROLL ANIMATIONS
+================================= */
+
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(40px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.scroll-animate.show {
+    opacity: 1;
+    transform: translateY(0);
+}

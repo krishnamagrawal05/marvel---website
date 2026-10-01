@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Marvel Hero Explorer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+    <!-- 3D CUSTOM CURSOR -->
+    <div id="custom-cursor"></div>
+    <div id="custom cursor"></div>
+    
+    <!-- =================================
+         LOADING SCREEN
+    ================================== -->
+
+    <div id="loader">
+
+        <div class="loader-content">
+
+            <h2>MARVEL</h2>
+
+            <div class="loader-spinner"></div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================
+         NAVIGATION
+    ================================== -->
+
+    <nav>
+
+        <h2>MARVEL</h2>
+
+
+        <!-- MOBILE MENU BUTTON -->
+
+        <button
+            class="menu-toggle"
+            onclick="toggleMenu()">
+
+            ☰
+
+        </button>
+
+
+        <!-- NAVIGATION LINKS -->
+
+        <div
+            class="nav-links"
+            id="nav-links">
+
+            <a href="#home">Home</a>
+
+            <a href="#heroes">Heroes</a>
+
+            <a href="#comparison">Compare</a>
+
+            <a href="#quiz">Quiz</a>
+
+            <a href="#movies">Movies</a>
+
+
+            <button
+                id="theme-toggle"
+                onclick="toggleTheme()">
+
+                ☀️ Light Mode
+
+            </button>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =================================
+         HOME
+    ================================== -->
+
+    <section
+        id="home"
+        class="hero">
+
+        <h1>
+            MARVEL HERO EXPLORER
+        </h1>
+
+        <p>
+            Discover. Explore. Become a Hero.
+        </p>
+
+
+        <button
+            onclick="document.getElementById('heroes').scrollIntoView()">
+
+            EXPLORE HEROES
+
+        </button>
+
+    </section>
+
+
+
+    <!-- =================================
+         HEROES
+    ================================== -->
+
+    <section id="heroes">
+
+        <h2>MEET THE HEROES</h2>
+
+
+        <!-- SEARCH -->
+
+        <input
+            type="text"
+            id="hero-search"
+            placeholder="Search for a hero...">
+
+
+        <!-- HERO CARDS -->
+
+        <div class="hero-container">
+
+
+            <!-- IRON MAN -->
+
+            <div
+                class="hero-card"
+                data-hero="ironman"
+                tabindex="0"
+                aria-label="Open Iron Man details"
+                onclick="showHero('ironman')">
+
+                <img
+                    src="images/ironman.png"
+                    alt="Iron Man">
+
+                <h3>IRON MAN</h3>
+
+                <p>
+                    Genius • Engineer • Avenger
+                </p>
+
+            </div>
+
+
+
+            <!-- SPIDER-MAN -->
+
+            <div
+                class="hero-card"
+                data-hero="spiderman"
+                tabindex="0"
+                aria-label="Open Spider-Man details"
+                onclick="showHero('spiderman')">
+
+                <img
+                    src="images/spiderman.png"
+                    alt="Spider-Man">
+
+                <h3>SPIDER-MAN</h3>
+
+                <p>
+                    Web-Slinger • Hero
+                </p>
+
+            </div>
+
+
+
+            <!-- THOR -->
+
+            <div
+                class="hero-card"
+                data-hero="thor"
+                tabindex="0"
+                aria-label="Open Thor details"
+                onclick="showHero('thor')">
+
+                <img
+                    src="images/thor.png"
+                    alt="Thor">
+
+                <h3>THOR</h3>
+
+                <p>
+                    God of Thunder • Avenger
+                </p>
+
+            </div>
+
+
+
+            <!-- CAPTAIN AMERICA -->
+
+            <div
+                class="hero-card"
+                data-hero="captainamerica"
+                tabindex="0"
+                aria-label="Open Captain America details"
+                onclick="showHero('captainamerica')">
+
+                <img
+                    src="images/captainamerica.png"
+                    alt="Captain America">
+
+                <h3>CAPTAIN AMERICA</h3>
+
+                <p>
+                    Super Soldier • Leader
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================
+         HERO DETAILS
+    ================================== -->
+
+    <div id="hero-info">
+
+
+        <img
+            id="hero-detail-image"
+            src=""
+            alt="Hero">
+
+
+        <h2 id="hero-name">
+            Select a Hero
+        </h2>
+
+
+        <p id="hero-description">
+            Click on a hero card to learn more.
+        </p>
+
+
+
+        <!-- POWER STATS -->
+
+        <div id="hero-stats">
+
+            <h3>
+                POWER STATS
+            </h3>
+
+
+            <!-- STRENGTH -->
+
+            <div class="stat">
+
+                <span>
+                    💪 Strength
+                </span>
+
+                <div class="stat-bar">
+
+                    <div id="strength-bar"></div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SPEED -->
+
+            <div class="stat">
+
+                <span>
+                    ⚡ Speed
+                </span>
+
+                <div class="stat-bar">
+
+                    <div id="speed-bar"></div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- INTELLIGENCE -->
+
+            <div class="stat">
+
+                <span>
+                    🧠 Intelligence
+                </span>
+
+                <div class="stat-bar">
+
+                    <div id="intelligence-bar"></div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- DURABILITY -->
+
+            <div class="stat">
+
+                <span>
+                    🛡️ Durability
+                </span>
+
+                <div class="stat-bar">
+
+                    <div id="durability-bar"></div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- COMBAT -->
+
+            <div class="stat">
+
+                <span>
+                    ⚔️ Combat
+                </span>
+
+                <div class="stat-bar">
+
+                    <div id="combat-bar"></div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- CLOSE BUTTON -->
+
+        <button onclick="closeHero()">
+
+            CLOSE
+
+        </button>
+
+
+    </div>
+
+
+
+    <!-- =================================
+         HERO COMPARISON
+    ================================== -->
+
+    <section id="comparison">
+
+        <h2>
+            COMPARE HEROES
+        </h2>
+
+
+        <div class="compare-selectors">
+
+
+            <select id="hero-one">
+
+                <option value="">
+                    Select Hero 1
+                </option>
+
+                <option value="ironman">
+                    Iron Man
+                </option>
+
+                <option value="spiderman">
+                    Spider-Man
+                </option>
+
+                <option value="thor">
+                    Thor
+                </option>
+
+                <option value="captainamerica">
+                    Captain America
+                </option>
+
+            </select>
+
+
+
+            <select id="hero-two">
+
+                <option value="">
+                    Select Hero 2
+                </option>
+
+                <option value="ironman">
+                    Iron Man
+                </option>
+
+                <option value="spiderman">
+                    Spider-Man
+                </option>
+
+                <option value="thor">
+                    Thor
+                </option>
+
+                <option value="captainamerica">
+                    Captain America
+                </option>
+
+            </select>
+
+
+
+            <button onclick="compareHeroes()">
+
+                COMPARE
+
+            </button>
+
+
+        </div>
+
+
+        <div id="comparison-result"></div>
+
+    </section>
+
+
+
+    <!-- =================================
+         MARVEL QUIZ
+    ================================== -->
+
+    <section id="quiz">
+
+        <h2>
+            MARVEL HERO QUIZ
+        </h2>
+
+
+        <p id="question">
+            Loading question...
+        </p>
+
+
+        <!-- QUIZ OPTIONS -->
+
+        <div id="quiz-options">
+
+            <button onclick="selectAnswer(0)">
+                Option 1
+            </button>
+
+            <button onclick="selectAnswer(1)">
+                Option 2
+            </button>
+
+            <button onclick="selectAnswer(2)">
+                Option 3
+            </button>
+
+            <button onclick="selectAnswer(3)">
+                Option 4
+            </button>
+
+        </div>
+
+
+        <!-- QUIZ RESULT -->
+
+        <p id="quiz-result"></p>
+
+
+        <!-- NEXT -->
+
+        <button
+            id="next-button"
+            onclick="nextQuestion()"
+            style="display: none;">
+
+            NEXT QUESTION
+
+        </button>
+
+
+        <!-- RESTART -->
+
+        <button
+            id="restart-button"
+            onclick="restartQuiz()"
+            style="display: none;">
+
+            RESTART QUIZ
+
+        </button>
+
+
+    </section>
+
+
+
+    <!-- =================================
+         MARVEL MOVIES
+    ================================== -->
+
+    <section id="movies">
+
+        <h2>
+            MARVEL MOVIES
+        </h2>
+
+
+        <div class="movie-container">
+
+
+            <!-- IRON MAN -->
+
+            <div class="movie-card">
+
+                <h3>
+                    IRON MAN
+                </h3>
+
+                <p>
+                    📅 2008
+                </p>
+
+                <p>
+                    🎬 Action / Sci-Fi
+                </p>
+
+                <p>
+                    ⭐ 7.9/10
+                </p>
+
+                <p>
+                    Tony Stark becomes Iron Man
+                    and begins his journey as a superhero.
+                </p>
+
+
+                <button
+                    onclick="window.open(
+                    'https://www.youtube.com/results?search_query=Iron+Man+2008+official+trailer',
+                    '_blank')">
+
+                    ▶ WATCH TRAILER
+
+                </button>
+
+            </div>
+
+
+
+            <!-- THE AVENGERS -->
+
+            <div class="movie-card">
+
+                <h3>
+                    THE AVENGERS
+                </h3>
+
+                <p>
+                    📅 2012
+                </p>
+
+                <p>
+                    🎬 Action / Adventure
+                </p>
+
+                <p>
+                    ⭐ 8.0/10
+                </p>
+
+                <p>
+                    Earth's mightiest heroes
+                    come together to protect the planet.
+                </p>
+
+
+                <button
+                    onclick="window.open(
+                    'https://www.youtube.com/results?search_query=The+Avengers+2012+official+trailer',
+                    '_blank')">
+
+                    ▶ WATCH TRAILER
+
+                </button>
+
+            </div>
+
+
+
+            <!-- THOR -->
+
+            <div class="movie-card">
+
+                <h3>
+                    THOR
+                </h3>
+
+                <p>
+                    📅 2011
+                </p>
+
+                <p>
+                    🎬 Action / Fantasy
+                </p>
+
+                <p>
+                    ⭐ 7.0/10
+                </p>
+
+                <p>
+                    Thor is sent to Earth and
+                    must learn what it truly means to be worthy.
+                </p>
+
+
+                <button
+                    onclick="window.open(
+                    'https://www.youtube.com/results?search_query=Thor+2011+official+trailer',
+                    '_blank')">
+
+                    ▶ WATCH TRAILER
+
+                </button>
+
+            </div>
+
+
+
+            <!-- SPIDER-MAN -->
+
+            <div class="movie-card">
+
+                <h3>
+                    SPIDER-MAN
+                </h3>
+
+                <p>
+                    📅 2017
+                </p>
+
+                <p>
+                    🎬 Action / Adventure
+                </p>
+
+                <p>
+                    ⭐ 7.4/10
+                </p>
+
+                <p>
+                    Peter Parker learns to balance
+                    his life while becoming a superhero.
+                </p>
+
+
+                <button
+                    onclick="window.open(
+                    'https://www.youtube.com/results?search_query=Spider-Man+Homecoming+official+trailer',
+                    '_blank')">
+
+                    ▶ WATCH TRAILER
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </section>
+<!-- ================================
+     MARVEL UNIVERSE MAP
+================================= -->
+
+<section id="universe-map">
+
+    <h2>🌌 MARVEL UNIVERSE MAP</h2>
+
+    <p class="map-subtitle">
+        Explore important locations from the Marvel Universe
+    </p>
+
+    <div class="map-container">
+
+        <button class="map-location" data-location="newyork">
+            🏙️
+            <span>New York</span>
+        </button>
+
+        <button class="map-location" data-location="wakanda">
+            🐾
+            <span>Wakanda</span>
+        </button>
+
+        <button class="map-location" data-location="asgard">
+            ⚡
+            <span>Asgard</span>
+        </button>
+
+        <button class="map-location" data-location="kamar-taj">
+            🔮
+            <span>Kamar-Taj</span>
+        </button>
+
+        <button class="map-location" data-location="knowhere">
+            🌌
+            <span>Knowhere</span>
+        </button>
+
+    </div>
+
+    <div id="location-info">
+
+        <h3 id="location-name">
+            Select a location
+        </h3>
+
+        <p id="location-description">
+            Click on a Marvel location to explore it.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- BACK TO TOP BUTTON -->
+<button id="back-to-top" title="Back to top">
+    ↑
+</button>
+<!-- =================================
+         JAVASCRIPT
+    ================================== -->
+
+<script src="script.js"></script>
+</body>
+</html>
