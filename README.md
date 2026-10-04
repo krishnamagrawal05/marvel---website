@@ -33,7 +33,7 @@ An interactive, single-page Marvel fan website where you can explore your favori
 
 ## 📁 Project Structure
 
-```
+````
 marvel---website/
 ├── index.html
 ├── style.css
@@ -44,7 +44,7 @@ marvel---website/
 │   ├── thor.png
 │   └── captainamerica.png
 └── README.md
-```
+````
 
 > Adjust the file names above if your project uses a different structure.
 
